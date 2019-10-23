@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300,400|Open+Sans&display=swap');
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("../fonts//Product\ Sans\ Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("../fonts//Google-Sans-Font/GoogleSans-Medium.ttf");
+    font-weight: medium;
+}
+
+.slick-list {
+  overflow: visible !important;
+}

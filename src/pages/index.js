@@ -1,56 +1,144 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-    <Layout>
-        <SEO title="Home" />
-        <div className="flex flex-col items-center font-sans text-gray-700">
-            <h1 className="text-2xl mt-10 font-bold">
-                Gatsby Tailwind PurgeCSS Starter
-            </h1>
-            <ul className="bg-blue-100 p-6 rounded my-5">
-                <li className="mb-3">
-                    <i className="far fa-check-circle mr-2 text-blue-400"></i>
-                    <a
-                        href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss"
-                        className="text-blue-500"
-                    >
-                        PostCSS
-                    </a>
-                    <ul className="mt-2 ml-6 text-blue-500 text-sm">
-                        <a href="https://github.com/postcss/autoprefixer"><li><i className="fas fa-caret-right mr-2"></i>Autoprefixer</li></a>
-                        <a href="https://github.com/anantoghosh/gatsby-plugin-purgecss"><li><i className="fas fa-caret-right mr-2"></i>PurgeCSS</li></a>
-                    </ul>
-                </li>
-                <li className="mb-3">
-                    <i className="far fa-check-circle mr-2 text-blue-400"></i>
-                    <a
-                        href="https://fontawesome.com/"
-                        className="text-blue-500"
-                    >
-                        FontAwesome <i className="fab fa-font-awesome"></i>
-                    </a>
-                </li>
-                <li className="mb-3">
-                    <i className="far fa-check-circle mr-2 text-blue-400"></i>
-                    <a
-                        href="https://tailwindcss.com/"
-                        className="text-blue-500"
-                    >
-                        TailwindCSS
-                    </a>
-                </li>
-            </ul>
-            <span className="text-blue-600 font-bold p-2 border border-gray-400 rounded hover:bg-blue-600 hover:text-white">
-                <i className="fab fa-github mr-2"></i>
-                <a href="https://github.com/sangeet/gatsby-tailwind-purgecss-starter">
-                    View on Github
-                </a>
-            </span>
-        </div>
-    </Layout>
-)
+import HomeSection from '../components/sections/homeSection'
+import ServicesSection from '../components/sections/servicesSection'
+import AboutSection from '../components/sections/aboutSection'
+import ServicesIncludesSection from '../components/sections/servicesIncludesSection'
+import OurCustomersSection from '../components/sections/ourCustomersSection'
+import ContactSection from '../components/sections/contactSection'
+
+import backgroundTrapezoid from "../images/background-trapezoid.svg"
+
+const IndexPage = ({ data }) => {
+    const mainSectionData = data.mainSectionData
+    const serviceSectionData = data.serviceSection
+    const aboutSectionData = data.aboutSection
+    const serviceIncludesSectionData = data.serviceIncludesSection
+    const ourCustomersSection = data.ourCustomersSection
+    return (
+        <Layout>
+            <SEO title="Home" />
+            <img
+                src={backgroundTrapezoid}
+                alt="Background Trapezoid"
+                className="absolute top-0 right-0"
+                style={{ zIndex: -1 }}
+            />
+            <HomeSection sectionData={mainSectionData} />
+            <ServicesSection sectionData={serviceSectionData} />
+            <AboutSection sectionData={aboutSectionData} />
+            <ServicesIncludesSection sectionData={serviceIncludesSectionData} />
+            <OurCustomersSection sectionData={ourCustomersSection} />
+            <ContactSection />
+        </Layout>
+    )
+}
+
+export const PageQuery = graphql`
+    {
+        mainSectionData: contentfulMainSection {
+            mainHeading {
+                mainHeading
+            }
+            subheading {
+                subheading
+            }
+            sectionLink {
+                text
+                link
+            }
+            mainImage {
+                file {
+                    url
+                    fileName
+                }
+            }
+            aboutUsText {
+                aboutUsText
+            }
+            aboutUsSecondaryText {
+                aboutUsSecondaryText
+            }
+            aboutUsTertiaryText {
+                aboutUsTertiaryText
+            }
+            partners {
+                file {
+                    url
+                    fileName
+                }
+            }
+        }
+        serviceSection: contentfulServiceSection {
+            mainHeading {
+                mainHeading
+            }
+            secondaryText {
+                secondaryText
+            }
+            serviceCards {
+                isCardActive
+                cardTitle
+                cardText
+                cardIcon {
+                    file {
+                        url
+                        fileName
+                    }
+                }
+            }
+        }
+        aboutSection: contentfulAboutSection {
+            mainHeading
+            mainText {
+                mainText
+            }
+            aboutCards {
+                aboutCardText
+                aboutCardImage {
+                    file {
+                        url
+                        fileName
+                    }
+                }
+            }
+            sectionLink {
+                text
+                href
+            }
+        }
+        serviceIncludesSection: contentfulServiceIncludesSection {
+            mainHeading
+            serviceIncludesCards {
+                serviceIncludeIcon {
+                    file {
+                        url
+                        fileName
+                    }
+                }
+                sectionIncludeCardText {
+                    sectionIncludeCardText
+                }
+                sectionIncludeCardTitle
+            }
+            sectionLink {
+                text
+                href
+            }
+        }
+        ourCustomersSection: contentfulOurCustomersSection {
+            customers {
+                file {
+                    url
+                    fileName
+                }
+            }
+        }
+    }
+`
 
 export default IndexPage

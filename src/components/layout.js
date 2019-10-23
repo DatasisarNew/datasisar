@@ -8,8 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 import "@fortawesome/fontawesome-free/css/all.css"
 import "./tailwind.css"
@@ -22,15 +24,64 @@ const Layout = ({ children }) => {
                     title
                 }
             }
+            metadata: contentfulMetadata {
+                mainLogo {
+                    file {
+                        url
+                    }
+                }
+                navLinks {
+                    text
+                    url {
+                        url
+                    }
+                }
+                footerPills {
+                    pillText
+                    pillIcon {
+                        file {
+                            url
+                            fileName
+                        }
+                    }
+                    isPillActive
+                }
+                footerLinks {
+                    text
+                    url {
+                        url
+                    }
+                }
+                footerLinks2 {
+                    text
+                    url {
+                        url
+                    }
+                }
+            }
         }
     `)
 
+    const { mainLogo, navLinks } = data.metadata
+    const { footerLinks, footerLinks2, footerPills } = data.metadata
+
     return (
         <>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <div>
-                <main>{children}</main>
-            </div>
+            <ParallaxProvider>
+                <Header
+                    mainLogo={mainLogo}
+                    navLinks={navLinks}
+                    siteTitle={data.site.siteMetadata.title}
+                />
+                <div className="font-plex">
+                    <main>{children}</main>
+                </div>
+                <Footer
+                    footerLinks={footerLinks}
+                    footerLinks2={footerLinks2}
+                    footerPills={footerPills}
+                />
+            </ParallaxProvider>
         </>
     )
 }

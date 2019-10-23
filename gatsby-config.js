@@ -6,16 +6,25 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        {
+            resolve: `gatsby-source-contentful`,
+            options: {
+                spaceId: `lrpej7wpo77n`,
+                // Learn about environment variables: https://gatsby.dev/env-vars
+                accessToken: `G-4FzawsA2ennDq_gmdNAZhATUZgM0yQjXiT2Q7zhYw`,
+            },
+        },
         `gatsby-plugin-postcss`,
         {
-            resolve:`gatsby-plugin-purgecss`,
+            resolve: `gatsby-plugin-purgecss`,
             options: {
                 // printRejected:true,
                 // develop:true,
-                tailwind:true,
-                rejected:true,
-                whitelist: ['whitelist'],
-            }
+                tailwind: true,
+                rejected: true,
+                whitelist: ["whitelist"],
+                whitelistPatterns: [/^slick-/]
+            },
         },
         {
             resolve: `gatsby-source-filesystem`,
@@ -32,8 +41,8 @@ module.exports = {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `#204DD4`,
+                theme_color: `#204DD4`,
                 display: `minimal-ui`,
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
