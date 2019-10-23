@@ -5,7 +5,7 @@ const FormRow = ({ children }) => {
     return <div className="flex flex-wrap items-end lg:mb-10 -mx-5">{children}</div>
 }
 
-const FormInput = ({ varname="", type="text", label = "", placeholder = "", half = true }) => {
+const FormInput = ({ required=false, varname="", type="text", label = "", placeholder = "", half = true }) => {
     return (
         <div
             className={`input-group flex flex-col px-5 mb-6 lg:mb-0 w-full ${
@@ -18,6 +18,7 @@ const FormInput = ({ varname="", type="text", label = "", placeholder = "", half
             { type==="textarea" ? (
                 <textarea
                     id={varname}
+                    required={required}
                     name={varname}
                     className="outline-none text-xl bg-transparent placeholder-gray-200 py-3 border-b border-gray-200 active:border-blue-300"
                     placeholder={placeholder}
@@ -25,6 +26,7 @@ const FormInput = ({ varname="", type="text", label = "", placeholder = "", half
             ) : (
                 <input
                     id={varname}
+                    required={required}
                     name={varname}
                     type={type}
                     className="outline-none text-xl bg-transparent placeholder-gray-200 py-3 border-b border-gray-200 active:border-blue-300"
@@ -55,16 +57,18 @@ const ContactSection = ({metadata}) => {
                                 label="your name"
                                 placeholder=""
                                 varname="contact-name"
+                                required={true}
                             />
-                            <FormInput varname="contact-email" type="email" placeholder="Email Address" />
+                            <FormInput required={true} varname="contact-email" type="email" placeholder="Email Address" />
                         </FormRow>
                         <FormRow>
                             <FormInput placeholder="Phone Number" varname="contact-phone" />
-                            <FormInput placeholder="Subject" varname="contact-subject" />
+                            <FormInput required={true} placeholder="Subject" varname="contact-subject" />
                         </FormRow>
                         <FormRow>
                             <FormInput
                                 half={false}
+                                required={true}
                                 type="textarea"
                                 varname="contact-message"
                                 placeholder="Your Message"

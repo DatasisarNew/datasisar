@@ -34,7 +34,7 @@ const ServicesSection = ({ sectionData }) => {
             id="services"
             className="container mx-auto text-center lg:text-left flex flex-col lg:flex-row justify-between lg:mt-48"
         >
-            <div className="lg:w-1/2 lg:py-16">
+            <div className="lg:w-1/2 lg:py-16 lg:pr-10">
                 <SectionHeading>
                     {sectionData.mainHeading.mainHeading}
                 </SectionHeading>

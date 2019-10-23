@@ -29,7 +29,7 @@ const HomeSection = ({ sectionData }) => {
             </div>
             <div className="flex flex-col md:flex-row mt-32 mx-auto w-11/12 md:w-full border-b border-custom-gray-200 pb-16">
                 <div className="font-light pr-8 md:w-1/2" id="about">
-                    <span className="font-bold uppercase mb-4 text-sm font-opensans block">about us</span>
+                    <SectionHeading>About Us</SectionHeading>
                     <p className="text-2xl">
                         {sectionData.aboutUsText.aboutUsText}
                     </p>
