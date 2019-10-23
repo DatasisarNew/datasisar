@@ -31,7 +31,7 @@ const AboutSection = ({ sectionData }) => {
         arrows: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 3.1,
         slidesToScroll: 1,
         responsive: [
             {
@@ -55,9 +55,9 @@ const AboutSection = ({ sectionData }) => {
         ],
     }
     return (
-        <section id="about" className="py-24 lg:-mt-8 bg-custom-gray-100 overflow-hidden">
+        <section id="products" className="py-24 lg:-mt-8 bg-custom-gray-100 overflow-hidden">
             <div className="container mx-auto">
-                <div className="md:w-7/12 mb-5">
+                <div className="md:w-7/12 mb-12">
                     <SectionHeading>{sectionData.mainHeading}</SectionHeading>
                     <SectionParagraph>
                         {sectionData.mainText.mainText}
@@ -65,7 +65,7 @@ const AboutSection = ({ sectionData }) => {
                 </div>
                 <Slider {...settings}>
                     {sectionData.aboutCards.map((card, index) => (
-                        <Parallax x={[30, -0]}><AboutCard cardData={card} key={index} /></Parallax>
+                        <Parallax x={[30, -40]}><AboutCard cardData={card} key={index} /></Parallax>
                     ))}
                 </Slider>
                 <SectionLink text={sectionData.sectionLink.text} />

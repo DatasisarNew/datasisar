@@ -43,7 +43,7 @@ const OurCustomersSection = ({ sectionData }) => {
                             <img
                                 src={customer.file.url}
                                 alt={customer.file.fileName}
-                                className="h-24 px-4 sm:px-10 mb-10"
+                                className="object-contain h-24 px-4 sm:px-10 mb-10"
                         />
                     ))}
                 </Slider>

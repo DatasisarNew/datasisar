@@ -8,7 +8,7 @@ import {
 
 const HomeSection = ({ sectionData }) => {
     return (
-        <section id="products" className="my-20 mx-auto container">
+        <section className="my-20 mx-auto container">
             <div className="font-light -mx-3 flex flex-col md:flex-row items-center">
                 <div className="px-3 w-11/12 md:w-1/2 flex flex-col items-start">
                     <SectionHeading>
@@ -28,7 +28,8 @@ const HomeSection = ({ sectionData }) => {
                 </Parallax>
             </div>
             <div className="flex flex-col md:flex-row mt-32 mx-auto w-11/12 md:w-full border-b border-custom-gray-200 pb-16">
-                <div className="font-light pr-8 md:w-1/2">
+                <div className="font-light pr-8 md:w-1/2" id="about">
+                    <span className="font-bold uppercase mb-4 text-sm font-opensans block">about us</span>
                     <p className="text-2xl">
                         {sectionData.aboutUsText.aboutUsText}
                     </p>

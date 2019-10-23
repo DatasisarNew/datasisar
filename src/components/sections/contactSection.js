@@ -51,7 +51,7 @@ const ContactSection = () => {
                         <FormRow>
                             <FormInput
                                 label="your name"
-                                placeholder="Abdullah Noman"
+                                placeholder=""
                                 varname="contact-name"
                             />
                             <FormInput varname="contact-email" type="email" placeholder="Email Address" />
