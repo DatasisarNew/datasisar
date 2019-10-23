@@ -18,12 +18,14 @@ const FormInput = ({ varname="", type="text", label = "", placeholder = "", half
             { type==="textarea" ? (
                 <textarea
                     id={varname}
+                    name={varname}
                     className="outline-none text-xl bg-transparent placeholder-gray-200 py-3 border-b border-gray-200 active:border-blue-300"
                     placeholder={placeholder}
                 />
             ) : (
                 <input
                     id={varname}
+                    name={varname}
                     type={type}
                     className="outline-none text-xl bg-transparent placeholder-gray-200 py-3 border-b border-gray-200 active:border-blue-300"
                     placeholder={placeholder}
@@ -33,7 +35,7 @@ const FormInput = ({ varname="", type="text", label = "", placeholder = "", half
     )
 }
 
-const ContactSection = () => {
+const ContactSection = ({metadata}) => {
     return (
         <section id="contact" className="bg-custom-blue-500 text-white py-24">
             <div className="container mx-auto flex flex-col md:flex-row">
@@ -47,7 +49,7 @@ const ContactSection = () => {
                     </h5>
                 </div>
                 <div className="mt-20 md:mt-0 md:w-2/3">
-                    <form action="" className="font-opensans">
+                    <form action={`https://mailthis.to/${metadata.contactEmailId}` } method="POST" className="font-opensans">
                         <FormRow>
                             <FormInput
                                 label="your name"
@@ -68,8 +70,8 @@ const ContactSection = () => {
                                 placeholder="Your Message"
                             />
                         </FormRow>
+                        <SectionLink isTypeSubmit={true} text="Start a Project" hasBorders={false} />
                     </form>
-                    <SectionLink text="Start a Project" hasBorders={false} />
                 </div>
             </div>
         </section>

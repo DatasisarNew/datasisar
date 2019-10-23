@@ -16,7 +16,7 @@ const HomeSection = ({ sectionData }) => {
                     </SectionHeading>
                     <SectionParagraph isPlex={true}>
                         {sectionData.subheading.subheading}
-                        <SectionLink text={sectionData.sectionLink.text} />
+                        <SectionLink text={sectionData.sectionLink.text} url={sectionData.sectionLink.url.url}/>
                     </SectionParagraph>
                 </div>
                 <Parallax className="w-11/12 md:w-1/2" x={[-10, 10]}>

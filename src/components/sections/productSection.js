@@ -11,7 +11,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-const AboutCard = ({ cardData }) => {
+const ProductCard = ({ cardData }) => {
     return (
         <div className="mr-10 flex-shrink-0">
             <img
@@ -25,7 +25,7 @@ const AboutCard = ({ cardData }) => {
     )
 }
 
-const AboutSection = ({ sectionData }) => {
+const ProductSection = ({ sectionData }) => {
     const settings = {
         dots: false,
         arrows: false,
@@ -64,14 +64,14 @@ const AboutSection = ({ sectionData }) => {
                     </SectionParagraph>
                 </div>
                 <Slider {...settings}>
-                    {sectionData.aboutCards.map((card, index) => (
-                        <Parallax x={[30, -40]}><AboutCard cardData={card} key={index} /></Parallax>
+                    {sectionData.productCards.map((card, index) => (
+                        <Parallax x={[30, -40]}><ProductCard cardData={card} key={index} /></Parallax>
                     ))}
                 </Slider>
-                <SectionLink text={sectionData.sectionLink.text} />
+                <SectionLink text={sectionData.sectionLink.text} url={sectionData.sectionLink.url.url} />
             </div>
         </section>
     )
 }
 
-export default AboutSection
+export default ProductSection

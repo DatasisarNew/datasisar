@@ -4,21 +4,22 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import HomeSection from '../components/sections/homeSection'
-import ServicesSection from '../components/sections/servicesSection'
-import AboutSection from '../components/sections/aboutSection'
-import ServicesIncludesSection from '../components/sections/servicesIncludesSection'
-import OurCustomersSection from '../components/sections/ourCustomersSection'
-import ContactSection from '../components/sections/contactSection'
+import HomeSection from "../components/sections/homeSection"
+import ServicesSection from "../components/sections/servicesSection"
+import ProductSection from "../components/sections/productSection"
+import ServicesIncludesSection from "../components/sections/servicesIncludesSection"
+import OurCustomersSection from "../components/sections/ourCustomersSection"
+import ContactSection from "../components/sections/contactSection"
 
 import backgroundTrapezoid from "../images/background-trapezoid.svg"
 
 const IndexPage = ({ data }) => {
     const mainSectionData = data.mainSectionData
     const serviceSectionData = data.serviceSection
-    const aboutSectionData = data.aboutSection
+    const productSectionData = data.productSection
     const serviceIncludesSectionData = data.serviceIncludesSection
     const ourCustomersSection = data.ourCustomersSection
+    const metadata = data.metadata
     return (
         <Layout>
             <SEO title="Home" />
@@ -30,10 +31,10 @@ const IndexPage = ({ data }) => {
             />
             <HomeSection sectionData={mainSectionData} />
             <ServicesSection sectionData={serviceSectionData} />
-            <AboutSection sectionData={aboutSectionData} />
+            <ProductSection sectionData={productSectionData} />
             <ServicesIncludesSection sectionData={serviceIncludesSectionData} />
             <OurCustomersSection sectionData={ourCustomersSection} />
-            <ContactSection />
+            <ContactSection metadata={metadata} />
         </Layout>
     )
 }
@@ -49,7 +50,9 @@ export const PageQuery = graphql`
             }
             sectionLink {
                 text
-                link
+                url {
+                    url
+                }
             }
             mainImage {
                 file {
@@ -92,12 +95,12 @@ export const PageQuery = graphql`
                 }
             }
         }
-        aboutSection: contentfulAboutSection {
+        productSection: contentfulProductSection {
             mainHeading
             mainText {
                 mainText
             }
-            aboutCards {
+            productCards {
                 aboutCardText
                 aboutCardImage {
                     file {
@@ -108,9 +111,12 @@ export const PageQuery = graphql`
             }
             sectionLink {
                 text
-                href
+                url {
+                    url
+                }
             }
         }
+
         serviceIncludesSection: contentfulServiceIncludesSection {
             mainHeading
             serviceIncludesCards {
@@ -138,6 +144,9 @@ export const PageQuery = graphql`
                 }
             }
         }
+        metadata: contentfulMetadata {
+            contactEmailId
+      }
     }
 `
 

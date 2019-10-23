@@ -31,14 +31,15 @@ const Header = ({ navLinks, mainLogo }) => {
                     isNavToggled ? "block" : "hidden"
                 }`}
             >
-                <button
+                <a
+                    href="#contact"
                     className="font-medium px-8 py-3 rounded-full text-white"
                     style={{
                         backgroundImage: `linear-gradient(53deg, #204DD4 0%, #4AD4F8 100%)`,
                     }}
                 >
                     Start a Project
-                </button>
+                </a>
             </div>
         </nav>
     )
