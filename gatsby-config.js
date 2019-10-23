@@ -6,6 +6,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-catch-links`, 
         {
             resolve: `gatsby-source-contentful`,
             options: {
@@ -23,7 +24,7 @@ module.exports = {
                 tailwind: true,
                 rejected: true,
                 whitelist: ["whitelist"],
-                whitelistPatterns: [/^slick-/]
+                whitelistPatterns: [/^slick-/],
             },
         },
         {

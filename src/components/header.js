@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
 import iconBars from "../images/icon-hamburger.svg"
 
 const Header = ({ navLinks, mainLogo }) => {
@@ -21,7 +20,7 @@ const Header = ({ navLinks, mainLogo }) => {
                 <ul className="lg:flex mt-10 lg:mt-0 mb-5 lg:mb-0 uppercase font-medium items-center">
                     {navLinks.map((link, index) => (
                         <li className="my-5 lg:my-0 px-5" key={index}>
-                            <Link to={link.url.url}>{link.text}</Link>
+                            <a href={link.url.url}>{link.text}</a>
                         </li>
                     ))}
                 </ul>

@@ -1,13 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
 import { SectionHeading } from "../components/sectionComponents"
 
 const Footer = ({ footerLinks, footerLinks2, footerPills }) => {
     return (
         <footer className="container mx-auto">
-            <div id="footer-data" className="py-24 flex flex-col sm:flex-row flex-wrap">
+            <div
+                id="footer-data"
+                className="py-24 flex flex-col sm:flex-row flex-wrap"
+            >
                 <div className="flex flex-col lg:flex-row sm:w-1/2">
-                    <div><SectionHeading>Wanna Become a partner?</SectionHeading></div>
+                    <div>
+                        <SectionHeading>Wanna Become a partner?</SectionHeading>
+                    </div>
                     <div className="mt-10 lg:mt-0 lg:pl-10 flex-shrink-0">
                         {footerPills.map(pill => (
                             <ContactPill pillData={pill} />
@@ -18,20 +22,23 @@ const Footer = ({ footerLinks, footerLinks2, footerPills }) => {
                     <ul className="sm:w-48">
                         {footerLinks.map(link => (
                             <li className="my-3">
-                                <Link to={link.url.url}>{link.text}</Link>
+                                <a href={link.url.url}>{link.text}</a>
                             </li>
                         ))}
                     </ul>
                     <ul className="sm:w-48">
                         {footerLinks2.map(link => (
                             <li className="my-3">
-                                <Link to={link.url.url}>{link.text}</Link>
+                                <a href={link.url.url}>{link.text}</a>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
-            <div id="footer-copyright" className="font-plex py-5 text-sm text-center border-t border-gray-300">
+            <div
+                id="footer-copyright"
+                className="font-plex py-5 text-sm text-center border-t border-gray-300"
+            >
                 <p>Copyright © 2019 Datasisar. All rights reserved Datasisar</p>
             </div>
         </footer>

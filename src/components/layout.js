@@ -58,12 +58,14 @@ const Layout = ({ children }) => {
                     url {
                         url
                     }
+                    isExternalLink
                 }
                 footerLinks2 {
                     text
                     url {
                         url
                     }
+                    isExternalLink
                 }
             }
         }
