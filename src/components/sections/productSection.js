@@ -1,5 +1,6 @@
-import React from "react"
+import React, {useState} from "react"
 import { Parallax } from "react-scroll-parallax"
+import { useWindowSize } from 'react-hooks-window-size'
 import {
     SectionHeading,
     SectionParagraph,
@@ -26,6 +27,10 @@ const ProductCard = ({ cardData }) => {
 }
 
 const ProductSection = ({ sectionData }) => {
+
+    const size = typeof window !== 'undefined' && window.innerWidth;
+    console.log(size);
+
     const settings = {
         dots: false,
         arrows: false,
@@ -54,21 +59,31 @@ const ProductSection = ({ sectionData }) => {
             },
         ],
     }
+    
     return (
-        <section id="products" className="py-24 lg:-mt-8 bg-custom-gray-100 overflow-hidden">
+        <section
+            id="products"
+            className="py-24 lg:-mt-8 bg-custom-gray-100 overflow-hidden"
+        >
             <div className="container mx-auto">
                 <div className="md:w-7/12 mb-12">
                     <SectionHeading>{sectionData.mainHeading}</SectionHeading>
                     <SectionParagraph>
                         {sectionData.mainText.mainText}
                     </SectionParagraph>
+
                 </div>
                 <Slider {...settings}>
                     {sectionData.productCards.map((card, index) => (
-                        <Parallax x={[30, -40]}><ProductCard cardData={card} key={index} /></Parallax>
+                        <Parallax x={ (size < 768) ? [0,0] : [30, -40]}>
+                            <ProductCard cardData={card} key={index} />
+                        </Parallax>
                     ))}
                 </Slider>
-                <SectionLink text={sectionData.sectionLink.text} url={sectionData.sectionLink.url.url} />
+                <SectionLink
+                    text={sectionData.sectionLink.text}
+                    url={sectionData.sectionLink.url.url}
+                />
             </div>
         </section>
     )

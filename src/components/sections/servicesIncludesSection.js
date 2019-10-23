@@ -33,7 +33,7 @@ const ServicesIncludesSection = ({ sectionData }) => {
                         ></ServiceIncludeCard>
                     ))}
                 </div>
-            <SectionLink text={sectionData.sectionLink.text} />
+            <SectionLink text={sectionData.sectionLink.text} url={sectionData.sectionLink.url.url}/>
         </section>
     )
 }

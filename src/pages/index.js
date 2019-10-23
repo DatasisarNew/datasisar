@@ -116,7 +116,6 @@ export const PageQuery = graphql`
                 }
             }
         }
-
         serviceIncludesSection: contentfulServiceIncludesSection {
             mainHeading
             serviceIncludesCards {
@@ -133,7 +132,9 @@ export const PageQuery = graphql`
             }
             sectionLink {
                 text
-                href
+                url {
+                    url
+                }
             }
         }
         ourCustomersSection: contentfulOurCustomersSection {
