@@ -21,8 +21,7 @@ const HomeSection = ({ sectionData }) => {
                 </div>
                 <Parallax
                     className="w-11/12 md:w-1/2"
-                    x={ [-30,30] }
-                    y={[30, -30]}
+                    x={ [-10,10] }
                 >
                     <img
                         className="mt-20 lg:mt-0 px-3"
