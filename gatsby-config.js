@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Tailwind PurgeCSS starter`,
-        description: `An opiniated starter pack for Gatsby pre-configured with TailwindCSS, PurgeCSS and FontAwesome`,
-        author: `@gatsbyjs`,
+        title: `Datasisar - Your reliable IT solutions partner`,
+        description: `Dedicated teams offering professional services for your software needs.`,
+        author: `@sangeet`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -45,7 +45,7 @@ module.exports = {
                 background_color: `#204DD4`,
                 theme_color: `#204DD4`,
                 display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                icon: `src/images/favicon.png`, // This path is relative to the root of the site.
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
