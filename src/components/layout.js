@@ -16,6 +16,13 @@ import "./layout.css"
 import "@fortawesome/fontawesome-free/css/all.css"
 import "./tailwind.css"
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]', {
+        speed: 600
+    })
+}
+
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {

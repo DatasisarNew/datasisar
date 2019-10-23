@@ -35,7 +35,7 @@ const FormInput = ({ varname="", type="text", label = "", placeholder = "", half
 
 const ContactSection = () => {
     return (
-        <section className="bg-custom-blue-500 text-white py-24">
+        <section id="contact" className="bg-custom-blue-500 text-white py-24">
             <div className="container mx-auto flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                     <SectionHeading>

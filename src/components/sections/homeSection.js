@@ -8,7 +8,7 @@ import {
 
 const HomeSection = ({ sectionData }) => {
     return (
-        <section className="my-20 mx-auto container">
+        <section id="products" className="my-20 mx-auto container">
             <div className="font-light -mx-3 flex flex-col md:flex-row items-center">
                 <div className="px-3 w-11/12 md:w-1/2 flex flex-col items-start">
                     <SectionHeading>
@@ -19,10 +19,7 @@ const HomeSection = ({ sectionData }) => {
                         <SectionLink text={sectionData.sectionLink.text} />
                     </SectionParagraph>
                 </div>
-                <Parallax
-                    className="w-11/12 md:w-1/2"
-                    x={ [-10,10] }
-                >
+                <Parallax className="w-11/12 md:w-1/2" x={[-10, 10]}>
                     <img
                         className="mt-20 lg:mt-0 px-3"
                         src={sectionData.mainImage.file.url}
@@ -49,20 +46,16 @@ const HomeSection = ({ sectionData }) => {
                 <span className="mb-10 lg:mb-0 text-2xl w-full lg:w-auto text-center lg:text-left">
                     Our Technology Partners
                 </span>
-                {sectionData.partners.map((partner, index) => {
-                    return (
-                        <Parallax
-                            x={[0, 20]}
-                        >
+                    {sectionData.partners.map((partner, index) => {
+                        return (
                             <img
                                 className="w-1/3 lg:w-auto mx-5 sm:mx-10 mb-5 lg:mb-0"
                                 key={index}
                                 src={partner.file.url}
                                 alt={partner.file.fileName}
                             />
-                        </Parallax>
-                    )
-                })}
+                        )
+                    })}
             </div>
         </section>
     )

@@ -24,7 +24,7 @@ const ServiceIncludeCard = ({ cardData }) => {
 
 const ServicesIncludesSection = ({ sectionData }) => {
     return (
-        <section className="py-16 lg:py-24 pb-20 lg:pb-0 container mx-auto border-b lg:border-0 border-custom-gray-300">
+        <section id="careers" className="py-16 lg:py-24 pb-20 lg:pb-0 container mx-auto border-b lg:border-0 border-custom-gray-300">
             <SectionHeading>{sectionData.mainHeading}</SectionHeading>
                 <div className="flex flex-wrap pt-16 -mx-5">
                     {sectionData.serviceIncludesCards.map(card => (

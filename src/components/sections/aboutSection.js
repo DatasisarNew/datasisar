@@ -55,7 +55,7 @@ const AboutSection = ({ sectionData }) => {
         ],
     }
     return (
-        <section className="py-24 lg:-mt-8 bg-custom-gray-100 overflow-hidden">
+        <section id="about" className="py-24 lg:-mt-8 bg-custom-gray-100 overflow-hidden">
             <div className="container mx-auto">
                 <div className="md:w-7/12 mb-5">
                     <SectionHeading>{sectionData.mainHeading}</SectionHeading>
