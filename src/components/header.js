@@ -8,7 +8,10 @@ const Header = ({ navLinks, mainLogo }) => {
             <div id="nav-header" className="w-1/2 lg:w-auto">
                 <img src={mainLogo.file.url} alt={mainLogo.file.fileName} />
             </div>
-            <button className="lg:hidden ml-auto p-3" onClick={() => navToggle(!isNavToggled)}>
+            <button
+                className="lg:hidden ml-auto p-3"
+                onClick={() => navToggle(!isNavToggled)}
+            >
                 <img src={iconBars} alt="hamburger-menu-button" />
             </button>
             <div
@@ -23,23 +26,18 @@ const Header = ({ navLinks, mainLogo }) => {
                             <a href={link.url.url}>{link.text}</a>
                         </li>
                     ))}
+                    <li>
+                        <a
+                            href="#contact"
+                            className="lg:ml-6 normal-case font-medium px-8 py-3 rounded-full text-white"
+                            style={{
+                                backgroundImage: `linear-gradient(53deg, #204DD4 0%, #4AD4F8 100%)`,
+                            }}
+                        >
+                            Start a Project
+                        </a>
+                    </li>
                 </ul>
-            </div>
-            <div
-                id="nav-buttons"
-                className={`w-full lg:w-auto lg:block ${
-                    isNavToggled ? "block" : "hidden"
-                }`}
-            >
-                <a
-                    href="#contact"
-                    className="font-medium px-8 py-3 rounded-full text-white"
-                    style={{
-                        backgroundImage: `linear-gradient(53deg, #204DD4 0%, #4AD4F8 100%)`,
-                    }}
-                >
-                    Start a Project
-                </a>
             </div>
         </nav>
     )
