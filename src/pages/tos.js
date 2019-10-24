@@ -8,7 +8,7 @@ const TOS = ({ data }) => {
     const converter = new showdown.Converter()
     const tosText = data.contentfulTermsAndConditions.tos.tos
     return (
-        <Layout>
+        <Layout hideLinks={true}>
             <SEO title="TOS" />
             <section className="container mx-auto my-20">
                 <h1 className="text-5xl font-light">Terms and Conditions</h1>

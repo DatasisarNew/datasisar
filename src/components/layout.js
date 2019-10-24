@@ -23,7 +23,7 @@ if (typeof window !== "undefined") {
     })
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hideLinks=false }) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -79,15 +79,21 @@ const Layout = ({ children }) => {
                     mainLogo={mainLogo}
                     navLinks={navLinks}
                     siteTitle={data.site.siteMetadata.title}
+                    hideLinks={hideLinks}
                 />
                 <div className="font-plex">
                     <main>{children}</main>
                 </div>
-                <Footer
+                {
+                  hideLinks ? '' : 
+                  (
+                  <Footer
                     footerLinks={footerLinks}
                     footerLinks2={footerLinks2}
                     footerPills={footerPills}
-                />
+                  />
+                  )
+                }
             </ParallaxProvider>
         </>
     )

@@ -8,7 +8,7 @@ const PrivacyPolicyPage = ({ data }) => {
     const converter = new showdown.Converter()
     const privacyText = data.privacyContent.privacyText.privacyText
     return (
-        <Layout>
+        <Layout hideLinks={true}>
             <SEO title="Privacy Policy" />
             <section className="container mx-auto my-20">
                 <h1 className="text-5xl font-light">Privacy Policy</h1>
