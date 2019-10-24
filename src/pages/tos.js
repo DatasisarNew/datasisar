@@ -4,18 +4,18 @@ import showdown from "showdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const PrivacyPolicyPage = ({ data }) => {
+const TOS = ({ data }) => {
     const converter = new showdown.Converter()
-    const privacyText = data.privacyContent.privacyText.privacyText
+    const tosText = data.contentfulTermsAndConditions.tos.tos
     return (
         <Layout>
-            <SEO title="Privacy Policy" />
+            <SEO title="TOS" />
             <section className="container mx-auto my-20">
-                <h1 className="text-5xl font-light">Privacy Policy</h1>
+                <h1 className="text-5xl font-light">Terms and Conditions</h1>
                 <article
                     className="markdown my-8"
                     dangerouslySetInnerHTML={{
-                        __html: converter.makeHtml(privacyText),
+                        __html: converter.makeHtml(tosText),
                     }}
                 ></article>
             </section>
@@ -25,12 +25,13 @@ const PrivacyPolicyPage = ({ data }) => {
 
 export const PageQuery = graphql`
     {
-        privacyContent:contentfulPrivacyContent {
-            privacyText {
-                privacyText
+        contentfulTermsAndConditions {
+            tos: termsAndConditions {
+                tos: termsAndConditions
             }
         }
     }
 `
 
-export default PrivacyPolicyPage
+export default TOS
+
