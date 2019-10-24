@@ -18,6 +18,7 @@
         "gatsby-source-contentful": "^2.1.50",
         "gatsby-source-filesystem": "^2.1.31",
         "gatsby-transformer-sharp": "^2.2.21",
+        "postcss-nesting": "^7.0.1",
         "prop-types": "^15.7.2",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
@@ -25,6 +26,7 @@
         "react-hooks-window-size": "^0.1.0",
         "react-scroll-parallax": "^2.2.0",
         "react-slick": "^0.25.2",
+        "showdown": "^1.9.0",
         "slick-carousel": "^1.8.1",
         "smooth-scroll": "^16.1.0"
     },
