@@ -3,6 +3,7 @@ import iconBars from "../images/icon-hamburger.svg"
 
 const Header = ({ navLinks, mainLogo }) => {
     const [isNavToggled, navToggle] = useState(false)
+    console.log(navLinks);
     return (
         <nav className="font-product container mx-auto text-lg py-5 flex flex-wrap items-center justify-between">
             <div id="nav-header" className="w-1/2 lg:w-auto">
