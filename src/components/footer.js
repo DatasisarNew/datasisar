@@ -39,7 +39,7 @@ const Footer = ({ footerLinks, footerLinks2, footerPills }) => {
                 id="footer-copyright"
                 className="font-plex py-5 text-sm text-center border-t border-gray-300"
             >
-                <p>Copyright © 2019 Datasisar. All rights reserved Datasisar</p>
+                <p>Copyright © { new Date().getFullYear() } Datasisar. All rights reserved Datasisar</p>
             </div>
         </footer>
     )
